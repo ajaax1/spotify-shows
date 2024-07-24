@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from 'vue';
 import spotifyGet from '../assets/axiosGet.js';
 import spotifyPost from '../assets/axiosPost.js';
 const login = () => {
@@ -9,6 +10,11 @@ const login = () => {
   const rota = `authorize?client_id=${import.meta.env.VITE_CLIENT_ID}&response_type=code&redirect_uri=${import.meta.env.VITE_URL}`;
   spotifyGet(rota);
 };
+onMounted(() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const code = urlParams.get("code");
+  console.log(code);
+});
 </script>
 
 <template>
