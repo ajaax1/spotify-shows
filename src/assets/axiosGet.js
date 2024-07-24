@@ -1,6 +1,10 @@
 import axios from 'axios';
+ const spotifyGet = (rota) => {
+ axios.get(`https://api.spotify.com/${rota}`, {
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
 
-export const api = axios.post('/user', {
+    },
   })
   .then(function (response) {
     console.log(response);
@@ -11,3 +15,5 @@ export const api = axios.post('/user', {
   .finally(function () {
 
   });  
+}
+export default spotifyGet;
