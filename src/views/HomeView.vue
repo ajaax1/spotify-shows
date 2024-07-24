@@ -4,12 +4,10 @@ import spotifyPost from '../assets/axiosPost.js';
 const login = () => {
   const rotaPost = `api/token`;
   const body = {
-    grant_type:'client_credentials',
   };
-  spotifyPost(rotaPost, body);
-  //console.log(localStorage.getItem('token'))
-  //const rota = `authorize?client_id=${import.meta.env.VITE_CLIENT_ID}&response_type=code&redirect_uri=${import.meta.env.VITE_URL}`;
-  //spotifyGet(rota);
+  spotifyPost(rotaPost);
+  const rota = `authorize?client_id=${import.meta.env.VITE_CLIENT_ID}&response_type=code&redirect_uri=${import.meta.env.VITE_URL}`;
+  spotifyGet(rota);
 };
 </script>
 

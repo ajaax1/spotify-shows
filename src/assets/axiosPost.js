@@ -7,8 +7,10 @@ const auth = `${client_id}:${client_secret}`;
 const authHeader = 'Basic ' + encode(auth);
 
 const spotifyPost = (rota, body) => {
-  const params = new URLSearchParams(body);
-  axios.post(`https://accounts.spotify.com/${rota}`, params, {
+  axios.post(`https://accounts.spotify.com/${rota}`, 
+    {
+      grant_type:'client_credentials',
+    },{
     headers: {
       'Authorization': authHeader,
       'Content-Type': 'application/x-www-form-urlencoded'

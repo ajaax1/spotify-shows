@@ -2,8 +2,7 @@ import axios from 'axios';
  const spotifyGet = (rota) => {
  axios.get(`https://api.spotify.com/${rota}`, {
     headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem('token')
-
+      'Authorization': 'Bearer ' + localStorage.getItem('token'),
     },
   })
   .then(function (response) {
