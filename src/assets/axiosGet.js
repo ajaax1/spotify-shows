@@ -12,7 +12,7 @@ import axios from 'axios';
     console.error(error);
   })
   .finally(function () {
-
+    window.location.href = `https://accounts.spotify.com/${rota}`;
   });  
 }
 export default spotifyGet;
